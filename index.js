@@ -3,7 +3,8 @@ var app = express();
 
 const { Pool } = require('pg');
 
-const connectionString = process.env.DATABASE_URL;
+const connectionString = process.env.DATABASE_URL || 'postgress://bvzlovwlmvybyc:428e6809e72e8ad2fee3eb1f4be3a3e6ba0c89903fa60e4b6ba8da6746bcdb3a@ec2-107-21-216-112.compute-1.amazonaws.com:5432/d93jk4ojlqvufu?ssl=true'
+
 const pool = new Pool({connectionString: connectionString});
 
 app.set('port', (process.env.PORT || 5000));
@@ -26,7 +27,7 @@ function getPerson(req, res) {
    
    getPersonFromDb(id, function(error, result) {
       console.log("Back from the getPersonFromBb function: ", result);
-   })
+   });
    
    var result = {id: 2, first_name: "Wendi", last_name: "Van Sickle", dob: "1969-06-28"};
    

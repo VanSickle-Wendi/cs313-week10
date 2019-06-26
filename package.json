@@ -4,6 +4,7 @@
   "description": "Week 10 Team Assignment",
   "main": "server.js",
   "scripts": {
+    "start": "node index.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "author": "Wendi Van Sickle",
